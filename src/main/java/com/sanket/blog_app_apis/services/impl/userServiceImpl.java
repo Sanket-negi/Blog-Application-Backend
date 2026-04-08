@@ -54,7 +54,7 @@ public class userServiceImpl implements UserService {
     @Override
     public userDTO getUserByUsername(userDTO userdto) {
         String username = userdto.getUsername();
-        User user =  this.userRepo.findByusername(username);
+        User user =  this.userRepo.findByUsername(username);
 
         return this.UserToDto((user));
     }
