@@ -75,6 +75,7 @@ public class SecurityConfig {
                             config.setAllowedHeaders(List.of("*"));
                             return config;
                         })
+
                 )
                .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> request
