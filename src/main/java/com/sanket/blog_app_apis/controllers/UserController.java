@@ -60,6 +60,12 @@ public class UserController {
 
     @PutMapping("users/{userId}")
     public ResponseEntity<userDTO> updateUser(@Valid @RequestBody userDTO userDto, @PathVariable Integer userId){
+        userDTO existingUser = this.userService.getUserById(userId);
+        if (userDto.getPassword() == null || userDto.getPassword().isBlank()) {
+            userDto.setPassword(existingUser.getPassword());
+        } else {
+            userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
+        }
         userDTO updatedUserDto = this.userService.updateUser(userDto,userId);
         return ResponseEntity.ok(updatedUserDto);
     }
