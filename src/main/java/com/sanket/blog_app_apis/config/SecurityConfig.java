@@ -69,10 +69,13 @@ public class SecurityConfig {
                 .cors(cors -> cors
                         .configurationSource(request -> {
                             CorsConfiguration config = new CorsConfiguration();
-                            config.setAllowedOrigins(List.of("https://blog-app-frontend-xi.vercel.app"));
-                            config.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","OPTIONS"));
+                            config.setAllowedOrigins(List.of(
+                                    "https://blog-app-frontend-xi.vercel.app",
+                                    "http://localhost:5173"
+                            ));
+                            config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
                             config.setAllowCredentials(true);
-                            config.setAllowedHeaders(List.of("*"));
+                            config.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept", "Origin", "X-Requested-With"));
                             return config;
                         })
 
