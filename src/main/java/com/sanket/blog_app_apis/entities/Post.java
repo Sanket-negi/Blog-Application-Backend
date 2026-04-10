@@ -26,9 +26,10 @@ public class Post {
 
     private String postContent;
 
-    private String imageName;
+    private String imageUrl;
 
     private Date addeddate;
+
 
     @ManyToOne
     @JoinColumn(name = "category_id")

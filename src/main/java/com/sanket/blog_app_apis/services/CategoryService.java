@@ -2,7 +2,6 @@ package com.sanket.blog_app_apis.services;
 
 import com.sanket.blog_app_apis.payloads.categoryDTO;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 @Service
@@ -24,4 +23,6 @@ public interface CategoryService {
     List<categoryDTO> getCategories();
 
 
+    interface CouldService {
+    }
 }
